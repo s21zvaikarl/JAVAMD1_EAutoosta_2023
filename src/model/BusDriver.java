@@ -15,6 +15,10 @@ public class BusDriver extends Employee {
 		this.yearOfExperience = yearOfExperience;
 	}
 	
+	public ArrayList<BusCategory> getCategories() {
+		return categories;
+	}
+
 	public void addCategory(BusCategory category) throws Exception {
 		//checks if the category exists
 		if (!categories.contains(category)) {
