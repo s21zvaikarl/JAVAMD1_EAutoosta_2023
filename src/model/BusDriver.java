@@ -7,6 +7,14 @@ public class BusDriver extends Employee {
 	private ArrayList<BusCategory> categories; //array for bus categories
 	private int yearOfExperience; //stazs
 	
+	public int getYearOfExperience() {
+		return yearOfExperience;
+	}
+
+	public void setYearOfExperience(int yearOfExperience) {
+		this.yearOfExperience = yearOfExperience;
+	}
+	
 	public void addCategory(BusCategory category) throws Exception {
 		//checks if the category exists
 		if (!categories.contains(category)) {
@@ -21,11 +29,10 @@ public class BusDriver extends Employee {
         }
 		else throw new Exception("Kategorija neeksiste!");
     }
-    
-    public BusDriver(String name, String surname, String personCode, LocalDate contractDate, String contractNumber, ArrayList<BusCategory> categories, int yearsOfExperience) {
-    		super(name, surname, personCode, contractDate, contractNumber);
-    		this.categories = categories;
-    		this.yearOfExperience = yearsOfExperience;
-    }
 
+	public BusDriver(String name, String surname, String personCode, LocalDate contractDate, ArrayList<BusCategory> categories, int yearsOfExperience) throws Exception {
+		super(name, surname, personCode, contractDate);
+		this.categories = categories;
+		setYearOfExperience(yearsOfExperience);
+	}
 }
